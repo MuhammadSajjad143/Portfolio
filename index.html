@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Software Engineer & Designer</title>
+    <meta name="description"
+        content="Personal portfolio of a Senior Software Engineer and Product Designer. View my work, experience, and certifications.">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Phosphor Icons for elegant minimalist icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <!-- Dynamic Animated Background -->
+    <div class="bg-gradient-sphere sphere-1"></div>
+    <div class="bg-gradient-sphere sphere-2"></div>
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+
+            <div class="nav-brand"
+                style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center;">
+                <a href="#hero" class="logo" style="display: flex; align-items: center; gap: 8px; font-size: 1.8rem;">
+                    <i class="ph-fill ph-infinity" style="color: var(--accent-cyan);"></i>
+                </a>
+                <span
+                    style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 0.5px; margin-top: -2px;">Muhammad
+                    Sajjad</span>
+            </div>
+
+            <nav class="desktop-nav">
+                <div class="nav-pill-indicator"></div>
+                <ul class="nav-links">
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-header">
+            <button class="close-btn" aria-label="Close menu">
+                <i class="ph ph-x"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#hero" class="mobile-link">Home</a></li>
+            <li><a href="#projects" class="mobile-link">Projects</a></li>
+            <li><a href="#experience" class="mobile-link">Experience</a></li>
+            <li><a href="#certifications" class="mobile-link">Certifications</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+        <div class="mobile-socials">
+            <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+            <a href="#" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+            <a href="#" aria-label="Email"><i class="ph ph-envelope-simple"></i></a>
+        </div>
+    </div>
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <main>
+        <!-- Split Layout for Sticky Image (Hero & Projects) -->
+        <div class="split-layout container-expanded">
+            <div class="content-column">
+
+                <!-- Hero Section -->
+                <section id="hero" class="hero section" data-image="hero">
+                    <div class="hero-content">
+                        <p class="hero-greeting fade-up-stagger">Welcome to my space</p>
+                        <h1 class="hero-name fade-up-stagger text-gradient"
+                            style="font-size: clamp(2.5rem, 6vw, 4rem);">
+                            Muhammad Sajjad.</h1>
+                        <h2 class="hero-title fade-up-stagger" style="font-size: clamp(1.5rem, 4vw, 3rem);">AI Engineer.
+                        </h2>
+                        <p class="hero-bio fade-up-stagger">
+                            Final-year BS Artificial Intelligence student with strong foundations in machine learning,
+                            data
+                            analysis, and deep learning. Experienced in building and optimizing ML/DL models using
+                            PyTorch and
+                            TensorFlow, with a research-driven mindset and strong problem-solving skills. Seeking an
+                            AI/ML
+                            Engineer role to develop, deploy, and scale intelligent solutions.
+                        </p>
+                        <div class="hero-actions fade-up-stagger">
+                            <a href="#projects" class="btn btn-primary">Check out my work!</a>
+                            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                        </div>
+                    </div>
+
+                    <div class="scroll-indicator">
+                        <a href="#projects" aria-label="Scroll down">
+                            <div class="mouse">
+                                <div class="wheel"></div>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects" class="projects section">
+                    <div class="container relative z-10">
+                        <div class="section-header reveal-up"
+                            style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="display: flex; align-items: center;">
+                                <h2 class="section-title">Projects</h2>
+                                <div class="section-line" style="width: 50px;"></div>
+                            </div>
+                            <div class="carousel-nav">
+                                <button id="prevBtn" class="carousel-btn" aria-label="Previous project"><i
+                                        class="ph ph-caret-left"></i></button>
+                                <button id="nextBtn" class="carousel-btn" aria-label="Next project"><i
+                                        class="ph ph-caret-right"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="carousel-container">
+                            <div class="carousel-track" id="projectTrack">
+                                <!-- Project Card 1 -->
+                                <div class="project-card reveal-up" style="transition-delay: 100ms;"
+                                    data-image="project1">
+                                    <div class="project-content">
+                                        <div class="project-header">
+                                            <div class="project-folder"><i class="ph ph-folder-notch"></i></div>
+                                            <div class="project-links">
+                                                <a href="https://github.com/MuhammadSajjad143/Soft-Actor-Critic-for-Traffic-Signal-Control-Under-Partial-Vehicle-Detection"
+                                                    aria-label="GitHub Link" target="_blank"><i
+                                                        class="ph ph-github-logo"></i></a>
+                                            </div>
+                                        </div>
+                                        <h3 class="project-title"><a
+                                                href="https://github.com/MuhammadSajjad143/Soft-Actor-Critic-for-Traffic-Signal-Control-Under-Partial-Vehicle-Detection"
+                                                target="_blank">Soft Actor Critic for Traffic Signal Control</a></h3>
+                                        <ul class="project-description-list"
+                                            style="list-style-type: disc; margin-left: 20px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+                                            <li><i class="ph ph-brain"
+                                                    style="margin-right: 8px; color: var(--accent-cyan);"></i>
+                                                Comparative evaluation of DQN, PPO, and Soft Actor–Critic (SAC) models.
+                                            </li>
+                                            <li><i class="ph ph-traffic-signal"
+                                                    style="margin-right: 8px; color: var(--accent-cyan);"></i> Traffic
+                                                signal control optimization under partial vehicle detection conditions.
+                                            </li>
+                                            <li><i class="ph ph-chart-line-up"
+                                                    style="margin-right: 8px; color: var(--accent-cyan);"></i>
+                                                Demonstrates off-policy SAC outperforming PPO under noisy, realistic
+                                                sensing constraints.</li>
+                                            <li><i class="ph ph-car-profile"
+                                                    style="margin-right: 8px; color: var(--accent-cyan);"></i>
+                                                Reproduces DTSE-based DQN baselines in a partially observable SUMO
+                                                environment.</li>
+                                        </ul>
+                                    </div>
+                                    <ul class="project-tech-list">
+                                        <li><i class="ph ph-file-py"></i> Python</li>
+                                        <li><i class="ph ph-robot"></i> Reinforcement Learning</li>
+                                        <li><i class="ph ph-car-profile"></i> SUMO</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Project Card 2 -->
+                                <div class="project-card reveal-up" style="transition-delay: 200ms;"
+                                    data-image="project2">
+                                    <div class="project-content">
+                                        <div class="project-header">
+                                            <div class="project-folder"><i class="ph ph-folder-notch"></i></div>
+                                            <div class="project-links">
+                                                <a href="https://github.com/MuhammadSajjad143/Advanced-Flight-Departure-Delay-Prediction-MLAdvanced"
+                                                    aria-label="GitHub Link" target="_blank"><i
+                                                        class="ph ph-github-logo"></i></a>
+                                            </div>
+                                        </div>
+                                        <h3 class="project-title"><a
+                                                href="https://github.com/MuhammadSajjad143/Advanced-Flight-Departure-Delay-Prediction-MLAdvanced"
+                                                target="_blank">Flight Departure Delay Prediction</a></h3>
+                                        <ul class="project-description-list"
+                                            style="list-style-type: disc; margin-left: 20px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+                                            <li><i class="ph ph-airplane-tilt"
+                                                    style="margin-right: 8px; color: var(--accent-cyan);"></i> Advanced
+                                                predictive modeling pipeline for commercial flight departures.</li>
+                                            <li><i class="ph ph-database"
+                                                    style="margin-right: 8px; color: var(--accent-cyan);"></i>
+                                                Processing and analyzing expansive delay datasets for high accuracy.
+                                            </li>
+                                            <li><i class="ph ph-cpu"
+                                                    style="margin-right: 8px; color: var(--accent-cyan);"></i>
+                                                Implementing various Machine Learning strategies to optimize routing and
+                                                schedule predictions.</li>
+                                        </ul>
+                                    </div>
+                                    <ul class="project-tech-list">
+                                        <li><i class="ph ph-notebook"></i> Jupyter Notebook</li>
+                                        <li><i class="ph ph-graph"></i> Machine Learning</li>
+                                        <li><i class="ph ph-file-py"></i> Python</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Project Card 3 -->
+                                <div class="project-card reveal-up" style="transition-delay: 300ms;"
+                                    data-image="project3">
+                                    <div class="project-content">
+                                        <div class="project-header">
+                                            <div class="project-folder"><i class="ph ph-folder-notch"></i></div>
+                                            <div class="project-links">
+                                                <a href="https://github.com/MuhammadSajjad143/Pneumonia-Detection-EfficientNet-Attention-Deep-Learning-Artificial-Neural-Network-"
+                                                    aria-label="GitHub Link" target="_blank"><i
+                                                        class="ph ph-github-logo"></i></a>
+                                            </div>
+                                        </div>
+                                        <h3 class="project-title"><a
+                                                href="https://github.com/MuhammadSajjad143/Pneumonia-Detection-EfficientNet-Attention-Deep-Learning-Artificial-Neural-Network-"
+                                                target="_blank">Pneumonia Detection EfficientNet</a></h3>
+                                        <ul class="project-description-list"
+                                            style="list-style-type: disc; margin-left: 20px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+                                            <li><i class="ph ph-lungs"
+                                                    style="margin-right: 8px; color: var(--accent-cyan);"></i> Two-phase
+                                                deep learning project for early pneumonia detection from chest X-ray
+                                                images.</li>
+                                            <li><i class="ph ph-magic-wand"
+                                                    style="margin-right: 8px; color: var(--accent-cyan);"></i>
+                                                Introduces an enhanced EfficientNet-B2 model equipped with spatial
+                                                attention.</li>
+                                            <li><i class="ph ph-activity"
+                                                    style="margin-right: 8px; color: var(--accent-cyan);"></i> Features
+                                                CLAHE preprocessing and focal loss to achieve clinically reliable
+                                                performance.</li>
+                                        </ul>
+                                    </div>
+                                    <ul class="project-tech-list">
+                                        <li><i class="ph ph-notebook"></i> Jupyter Notebook</li>
+                                        <li><i class="ph ph-network"></i> EfficientNet</li>
+                                        <li><i class="ph ph-brain"></i> Deep Learning</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Project Card 4 -->
+                                <div class="project-card reveal-up" style="transition-delay: 400ms;"
+                                    data-image="project4">
+                                    <div class="project-content">
+                                        <div class="project-header">
+                                            <div class="project-folder"><i class="ph ph-folder-notch"></i></div>
+                                            <div class="project-links">
+                                                <a href="https://github.com/MuhammadSajjad143/AI-Sports-SlowMotion"
+                                                    aria-label="GitHub Link" target="_blank"><i
+                                                        class="ph ph-github-logo"></i></a>
+                                            </div>
+                                        </div>
+                                        <h3 class="project-title"><a
+                                                href="https://github.com/MuhammadSajjad143/AI-Sports-SlowMotion"
+                                                target="_blank">AI Sports SlowMotion</a></h3>
+                                        <ul class="project-description-list"
+                                            style="list-style-type: disc; margin-left: 20px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+                                            <li><i class="ph ph-video-camera"
+                                                    style="margin-right: 8px; color: var(--accent-cyan);"></i> Advanced
+                                                AI-driven computer vision utility for video manipulation.</li>
+                                            <li><i class="ph ph-sparkle"
+                                                    style="margin-right: 8px; color: var(--accent-cyan);"></i>
+                                                Synthetically generates high-quality slow-motion footage from standard
+                                                sports recordings.</li>
+                                            <li><i class="ph ph-film-strip"
+                                                    style="margin-right: 8px; color: var(--accent-cyan);"></i> Utilizes
+                                                deep frame interpolation to infer intermediate video frames seamlessly.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <ul class="project-tech-list">
+                                        <li><i class="ph ph-file-py"></i> Python</li>
+                                        <li><i class="ph ph-eye"></i> Computer Vision</li>
+                                        <li><i class="ph ph-film-strip"></i> Frame Interpolation</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Project Card 5 -->
+                                <div class="project-card reveal-up" style="transition-delay: 500ms;"
+                                    data-image="project5">
+                                    <div class="project-content">
+                                        <div class="project-header">
+                                            <div class="project-folder"><i class="ph ph-folder-notch"></i></div>
+                                            <div class="project-links">
+                                                <a href="https://github.com/MuhammadSajjad143/Exam-Schedule-Generator-Using-Genetic-Algorithm"
+                                                    aria-label="GitHub Link" target="_blank"><i
+                                                        class="ph ph-github-logo"></i></a>
+                                            </div>
+                                        </div>
+                                        <ul class="project-description-list"
+                                            style="list-style-type: disc; margin-left: 20px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+                                            <li><i class="ph ph-calendar-check"
+                                                    style="margin-right: 8px; color: var(--accent-cyan);"></i> AI-based
+                                                exam scheduling system using Genetic Algorithms.</li>
+                                            <li><i class="ph ph-shield-check"
+                                                    style="margin-right: 8px; color: var(--accent-cyan);"></i> Generates
+                                                optimized exam timetables while strictly enforcing hard constraints.
+                                            </li>
+                                            <li><i class="ph ph-scales"
+                                                    style="margin-right: 8px; color: var(--accent-cyan);"></i> Improves
+                                                schedule quality through soft constraints like reduced exam days and
+                                                balanced invigilation.</li>
+                                        </ul>
+                                    </div>
+                                    <ul class="project-tech-list">
+                                        <li><i class="ph ph-notebook"></i> Jupyter Notebook</li>
+                                        <li><i class="ph ph-dna"></i> Genetic Algorithms</li>
+                                        <li><i class="ph ph-cpu"></i> AI</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+
+            </div> <!-- End of content-column -->
+
+            <!-- Sticky Visual Column -->
+            <div class="visual-column">
+                <div class="sticky-visual">
+                    <img id="dynamicImage"
+                        src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?q=80&w=800&auto=format&fit=crop"
+                        alt="Dynamic Visual Representation" class="sticky-image fade-in">
+                </div>
+            </div>
+
+        </div> <!-- End of split-layout container-expanded -->
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience section">
+            <div class="container relative z-10">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title">Experience</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="timeline">
+                    <!-- Experience 1 -->
+                    <div class="timeline-item reveal-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card-glass">
+                            <h3 class="role">Senior Software Engineer <span class="company">@ TechNova</span>
+                            </h3>
+                            <p class="duration">Jan 2022 - Present</p>
+                            <ul class="responsibilities">
+                                <li>Lead the development of the core product dashboard, improving load times by
+                                    40%
+                                    using React and Next.js.</li>
+                                <li>Architected and implemented a micro-frontend architecture for a team of 30+
+                                    engineers.</li>
+                                <li>Mentored junior engineers and conducted regular code reviews to maintain
+                                    high
+                                    quality standards.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="timeline-item reveal-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card-glass">
+                            <h3 class="role">Software Engineer <span class="company">@ CloudScale Inc.</span>
+                            </h3>
+                            <p class="duration">Mar 2019 - Dec 2021</p>
+                            <ul class="responsibilities">
+                                <li>Developed and maintained RESTful APIs using Node.js and Express processing
+                                    millions
+                                    of requests daily.</li>
+                                <li>Implemented robust caching strategies with Redis, reducing database load and
+                                    improving response times.</li>
+                                <li>Collaborated with design team to build accessible, responsive UI components.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3 -->
+                    <div class="timeline-item reveal-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card-glass">
+                            <h3 class="role">Frontend Developer <span class="company">@ Creative Studio</span>
+                            </h3>
+                            <p class="duration">Jun 2017 - Feb 2019</p>
+                            <ul class="responsibilities">
+                                <li>Built interactive web applications for high-profile clients using Vue.js and
+                                    plain
+                                    JavaScript.</li>
+                                <li>Ensured cross-browser compatibility and optimized performance for mobile
+                                    devices.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="certifications section">
+            <div class="container relative z-10">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title">Certifications</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="certs-grid">
+                    <div class="cert-card card-glass reveal-up">
+                        <div class="cert-icon"><i class="ph ph-certificate"></i></div>
+                        <div class="cert-info">
+                            <h3 class="cert-name">AWS Certified Solutions Architect</h3>
+                            <p class="cert-issuer">Amazon Web Services</p>
+                            <p class="cert-date">Issued Jan 2023</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card card-glass reveal-up" style="transition-delay: 100ms;">
+                        <div class="cert-icon"><i class="ph ph-shield-check"></i></div>
+                        <div class="cert-info">
+                            <h3 class="cert-name">Certified Kubernetes Administrator (CKA)</h3>
+                            <p class="cert-issuer">Cloud Native Computing Foundation</p>
+                            <p class="cert-date">Issued Oct 2022</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card card-glass reveal-up" style="transition-delay: 200ms;">
+                        <div class="cert-icon"><i class="ph ph-code"></i></div>
+                        <div class="cert-info">
+                            <h3 class="cert-name">React Native Specialist</h3>
+                            <p class="cert-issuer">Meta</p>
+                            <p class="cert-date">Issued Mar 2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="container relative z-10">
+                <div class="contact-wrapper reveal-up">
+                    <h2 class="contact-title">Get In Touch</h2>
+                    <p class="contact-desc">
+                        Although I'm not currently looking for any new opportunities, my inbox is always open.
+                        Whether
+                        you have a question or just want to say hi, I'll try my best to get back to you!
+                    </p>
+
+                    <form class="contact-form group" id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="sr-only">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Name" required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Email" required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="sr-only">Message</label>
+                            <textarea id="message" name="message" placeholder="Message" rows="5" required
+                                class="form-input"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full">Say Hello</button>
+                    </form>
+
+                    <div class="social-links-footer">
+                        <a href="#" aria-label="LinkedIn" class="social-link"><i class="ph ph-linkedin-logo"></i></a>
+                        <a href="#" aria-label="GitHub" class="social-link"><i class="ph ph-github-logo"></i></a>
+                        <a href="#" aria-label="Twitter" class="social-link"><i class="ph ph-twitter-logo"></i></a>
+                        <a href="#" aria-label="Email" class="social-link"><i class="ph ph-envelope-simple"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>Designed & Built with <i class="ph-fill ph-heart text-accent mx-1"></i> by John Doe</p>
+            <p class="copyright">© 2024 John Doe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
